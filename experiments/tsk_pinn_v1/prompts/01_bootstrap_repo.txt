@@ -1,0 +1,15 @@
+Use $tsk-pinn-experiment.
+
+Bootstrap a minimal but reproducible research repository for a TSK-based local reliability weighted PINN experiment.
+
+Requirements:
+1. Create a clean experiment layout under experiments/tsk_pinn_v1.
+2. Add config files, training entrypoints, evaluation entrypoints, output folders, and a report template.
+3. Use role-based collaboration:
+   - planner
+   - model architect
+   - training engineer
+   - evaluator
+4. Keep the first version minimal and runnable.
+5. Do not claim any performance gain without measured comparison.
+6. End with a detailed summary of what was created and what still needs implementation.

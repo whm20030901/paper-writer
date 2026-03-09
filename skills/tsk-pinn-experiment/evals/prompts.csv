@@ -1,0 +1,6 @@
+prompt,should_use_skill,notes
+"Build a minimal Burgers experiment comparing a vanilla PINN and a TSK-based local reliability weighted PINN, then produce a detailed report.",yes,core trigger
+"Add Gaussian antecedents and a first-order TSK consequent to my existing PINN repo and save metrics plus failure analysis.",yes,model modification trigger
+"Run an ablation on rule count and bottleneck dimension for my TSK-PINN and summarize what underperformed.",yes,ablation trigger
+"Explain the Burgers equation theoretically.",no,should not use for pure theory only
+"Write a generic Python utility to parse JSON.",no,unrelated coding task
