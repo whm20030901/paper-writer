@@ -3,12 +3,7 @@
 ## Objective
 Build the first minimal, reproducible benchmark for a TSK-based local reliability weighted PINN.
 
-## Recommended first benchmark
-- PDE: 1D Burgers equation
-- Baseline: vanilla PINN
-- Proposed: PINN backbone + Gaussian TSK antecedent + first-order TSK consequent for local loss weights
-
-## Suggested directory layout to ask Codex to create
+## Layout
 ```text
 experiments/tsk_pinn_v1/
   configs/
@@ -19,25 +14,26 @@ experiments/tsk_pinn_v1/
     train_tsk.py
     eval_compare.py
   src/
-    data/
-    models/
-      backbone.py
-      tsk.py
-      losses.py
-    trainers/
-    utils/
+    data/burgers.py
+    models/{backbone.py,tsk.py,losses.py}
+    trainers/train.py
+    utils/io.py
   outputs/
-    burgers_baseline/
-    burgers_tsk/
   reports/
     burgers_v1_report.md
 ```
 
-## Minimum success criteria
-- both models run end-to-end
-- saved metrics for both models
-- saved loss curves
-- saved solution comparison plot
-- saved fuzzy partition visualization
-- saved local loss weight visualization
-- report includes explicit failure analysis
+## Quick start
+```bash
+python experiments/tsk_pinn_v1/scripts/train_baseline.py --config experiments/tsk_pinn_v1/configs/burgers_baseline.yaml
+python experiments/tsk_pinn_v1/scripts/train_tsk.py --config experiments/tsk_pinn_v1/configs/burgers_tsk.yaml
+python experiments/tsk_pinn_v1/scripts/eval_compare.py \
+  --baseline experiments/tsk_pinn_v1/outputs/burgers_baseline \
+  --tsk experiments/tsk_pinn_v1/outputs/burgers_tsk \
+  --out experiments/tsk_pinn_v1/outputs/compare/metrics_compare.csv
+```
+
+## Notes
+- 该版本是最小可运行实验骨架（baseline + TSK + 指标/可视化保存）。
+- 不应在未实测比较前宣称性能提升。
+- 若 TSK 表现不佳，请在报告中明确写入 `Not Meeting Expectations`。
