@@ -1,0 +1,21 @@
+seed: 42
+device: cpu
+nu: 0.003183098861837907
+output_dir: experiments/tsk_pinn_v1/outputs/burgers_baseline
+
+data:
+  n_f: 1200
+  n_b: 120
+  n_i: 120
+
+model:
+  hidden_dim: 64
+  depth: 3
+
+train:
+  epochs: 300
+  lr: 0.001
+
+eval:
+  nx: 128
+  nt: 4000

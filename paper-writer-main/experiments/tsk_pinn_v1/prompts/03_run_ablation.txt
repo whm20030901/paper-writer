@@ -1,0 +1,16 @@
+Use $tsk-pinn-experiment.
+
+Run a targeted ablation study on the current TSK-PINN Burgers benchmark.
+
+Focus on:
+- rule count
+- antecedent projection dimension
+- consequent bottleneck dimension
+- DropRule on/off
+- uniform regularization on/off
+
+Requirements:
+1. Keep the baseline fixed.
+2. Compare all ablations against the main TSK model and the vanilla baseline.
+3. Summarize which settings help, which hurt, and which are inconclusive.
+4. For every disappointing result, explain the evidence and propose the next highest-value change.
